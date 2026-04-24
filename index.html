@@ -11,9 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@400;700;800;900&display=swap" rel="stylesheet"/>
 
 <style>
-/* ============================================
-   RESET & BASE
-============================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -35,9 +32,6 @@ body {
   cursor: none;
 }
 
-/* ============================================
-   CUSTOM CURSOR
-============================================ */
 .cursor {
   position: fixed;
   width: 16px; height: 16px;
@@ -50,9 +44,6 @@ body {
 }
 .cursor.hover { transform: scale(3); }
 
-/* ============================================
-   GRAIN OVERLAY
-============================================ */
 .grain {
   position: fixed;
   inset: 0;
@@ -64,9 +55,6 @@ body {
   background-size: 128px;
 }
 
-/* ============================================
-   NAV
-============================================ */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -80,17 +68,9 @@ nav {
   border-bottom: 2px solid var(--red);
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
 
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
 .nav-links a {
   font-family: var(--mono);
@@ -123,9 +103,6 @@ nav {
   50% { outline: 2px solid transparent; }
 }
 
-/* ============================================
-   SECTION COUNTER (fixed right)
-============================================ */
 .section-counter {
   position: fixed;
   right: 1.5rem;
@@ -138,12 +115,8 @@ nav {
   opacity: 0.12;
   pointer-events: none;
   line-height: 1;
-  transition: opacity 0.3s;
 }
 
-/* ============================================
-   MARQUEE
-============================================ */
 .marquee-wrap {
   background: var(--red);
   border-top: 2px solid var(--white);
@@ -174,9 +147,6 @@ nav {
   to { transform: translateX(-50%); }
 }
 
-/* ============================================
-   HERO
-============================================ */
 #hero {
   min-height: 100vh;
   padding-top: 56px;
@@ -195,7 +165,7 @@ nav {
 .hero-bg-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(254,93,160,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(254,93,160,0.06) 1px, transparent 1px);
   background-size: 80px 80px;
@@ -240,18 +210,10 @@ nav {
   line-height: 0.88;
   letter-spacing: -0.01em;
   color: var(--white);
-  overflow: hidden;
 }
 
-.hero-headline .line {
-  display: block;
-  overflow: hidden;
-}
-
-.hero-headline .line-inner {
-  display: block;
-  transform: translateY(110%);
-}
+.hero-headline .line { display: block; overflow: hidden; }
+.hero-headline .line-inner { display: block; transform: translateY(110%); }
 
 .hero-subline {
   font-family: var(--mono);
@@ -283,18 +245,11 @@ nav {
   display: flex;
   align-items: center;
   gap: 1rem;
-  position: relative;
-  overflow: hidden;
   transition: background 0.1s, color 0.1s;
 }
 
 .hero-cta:hover { background: var(--white); color: var(--red); }
-
-.hero-cta .arrow {
-  display: inline-block;
-  transition: transform 0.2s;
-}
-
+.hero-cta .arrow { display: inline-block; transition: transform 0.2s; }
 .hero-cta:hover .arrow { transform: translateX(8px); }
 
 .hero-stats {
@@ -306,10 +261,7 @@ nav {
   color: rgba(245,240,235,0.6);
 }
 
-.odometer {
-  color: var(--red);
-  font-weight: 700;
-}
+.odometer { color: var(--red); font-weight: 700; }
 
 .hero-side-text {
   position: absolute;
@@ -325,9 +277,6 @@ nav {
   text-transform: uppercase;
 }
 
-/* ============================================
-   RED BLOCK — THE NUMBER
-============================================ */
 #number-block {
   background: var(--red);
   padding: 6rem 3rem;
@@ -352,6 +301,7 @@ nav {
   position: relative;
   z-index: 1;
   user-select: none;
+  text-align: center;
 }
 
 .number-overlay {
@@ -381,11 +331,7 @@ nav {
   z-index: 2;
 }
 
-.progress-section {
-  position: relative;
-  z-index: 2;
-  margin-top: 2rem;
-}
+.progress-section { position: relative; z-index: 2; margin-top: 2rem; }
 
 .progress-label {
   display: flex;
@@ -412,35 +358,11 @@ nav {
   transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.quota-item {
-  border-left: 4px solid var(--black);
-  padding-left: 1.2rem;
-}
+.quota-item { border-left: 4px solid var(--black); padding-left: 1.2rem; }
+.quota-item h4 { font-family: var(--display); font-size: 2rem; color: var(--black); letter-spacing: 0.05em; }
+.quota-item p { font-family: var(--mono); font-size: 0.6rem; color: var(--black); font-weight: 700; margin-top: 0.3rem; letter-spacing: 0.15em; }
 
-.quota-item h4 {
-  font-family: var(--display);
-  font-size: 2rem;
-  color: var(--black);
-  letter-spacing: 0.05em;
-}
-
-.quota-item p {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: var(--black);
-  font-weight: 700;
-  margin-top: 0.3rem;
-  letter-spacing: 0.15em;
-}
-
-/* ============================================
-   HOW IT WORKS
-============================================ */
-#how-it-works {
-  padding: 8rem 3rem;
-  background: var(--black);
-  position: relative;
-}
+#how-it-works { padding: 8rem 3rem; background: var(--black); position: relative; }
 
 .section-header {
   display: flex;
@@ -451,20 +373,8 @@ nav {
   gap: 1rem;
 }
 
-.section-title {
-  font-family: var(--display);
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-}
-
-.section-meta {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: rgba(245,240,235,0.4);
-  text-transform: uppercase;
-}
+.section-title { font-family: var(--display); font-size: clamp(3.5rem, 8vw, 7rem); line-height: 0.9; letter-spacing: 0.02em; }
+.section-meta { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(245,240,235,0.4); text-transform: uppercase; }
 
 .steps-grid {
   display: grid;
@@ -477,7 +387,6 @@ nav {
   border-right: 1px solid rgba(245,240,235,0.2);
   position: relative;
   overflow: hidden;
-  transition: background 0s;
 }
 
 .step-card:last-child { border-right: none; }
@@ -493,146 +402,22 @@ nav {
 }
 
 .step-card:hover::before { transform: translateX(0); }
-
 .step-card > * { position: relative; z-index: 1; }
-
 .step-card:hover .step-num { color: var(--red); }
 .step-card:hover .step-title { color: var(--black); }
 .step-card:hover .step-body { color: var(--black); }
 
-.step-num {
-  font-family: var(--mono);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--red);
-  margin-bottom: 2rem;
-  display: block;
-}
+.step-num { font-family: var(--mono); font-size: 2.5rem; font-weight: 700; color: var(--red); margin-bottom: 2rem; display: block; }
+.step-title { font-family: var(--display); font-size: 2.2rem; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--white); }
+.step-body { font-family: var(--mono); font-size: 0.65rem; line-height: 1.9; color: rgba(245,240,235,0.6); letter-spacing: 0.05em; }
 
-.step-title {
-  font-family: var(--display);
-  font-size: 2.2rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-  color: var(--white);
-}
+.steps-connector { display: block; width: 100%; height: 3px; margin-top: 3rem; overflow: visible; }
 
-.step-body {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  line-height: 1.9;
-  color: rgba(245,240,235,0.6);
-  letter-spacing: 0.05em;
-}
+#the-squad { padding: 8rem 3rem; background: var(--black); position: relative; }
 
-/* SVG connecting line */
-.steps-connector {
-  display: block;
-  width: 100%;
-  height: 3px;
-  margin-top: 3rem;
-  overflow: visible;
-}
+.squad-headline { font-family: var(--display); font-size: clamp(5rem, 18vw, 16rem); line-height: 0.85; overflow: hidden; margin-bottom: 4rem; }
 
-/* ============================================
-   PHOTO GRID (COMMENTED OUT FOR NOW)
-============================================ */
-/*
-#photo-grid {
-  padding: 0 3rem 6rem;
-  background: var(--black);
-}
-
-.grid-layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  gap: 4px;
-}
-
-.grid-item {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(245,240,235,0.1);
-  cursor: none;
-}
-
-.grid-item.large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%) contrast(1.15);
-  transition: filter 0.2s, transform 0.3s ease;
-  display: block;
-  min-height: 220px;
-}
-
-.grid-item:hover img {
-  filter: grayscale(0%) contrast(1.05);
-  transform: scale(1.04);
-}
-
-.grid-caption {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(10,10,10,0.9);
-  padding: 0.8rem 1rem;
-  transform: translateY(100%);
-  transition: transform 0.15s;
-  border-top: 2px solid var(--red);
-}
-
-.grid-item:hover .grid-caption { transform: translateY(0); }
-
-.grid-caption span {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--white);
-  text-transform: uppercase;
-}
-
-.grid-tag {
-  position: absolute;
-  top: 0.8rem; right: 0.8rem;
-  background: var(--red);
-  font-family: var(--mono);
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--black);
-  padding: 0.25rem 0.5rem;
-  text-transform: uppercase;
-}
-*/
-
-/* ============================================
-   THE SQUAD
-============================================ */
-#the-squad {
-  padding: 8rem 3rem;
-  background: var(--black);
-  position: relative;
-}
-
-.squad-headline {
-  font-family: var(--display);
-  font-size: clamp(5rem, 18vw, 16rem);
-  line-height: 0.85;
-  overflow: hidden;
-  margin-bottom: 4rem;
-}
-
-.squad-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 4px;
-}
+.squad-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
 
 .squad-card {
   aspect-ratio: 3/4;
@@ -645,7 +430,9 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   filter: grayscale(100%) contrast(1.2);
+  display: block;
 }
 
 .squad-card.blurred .blur-overlay {
@@ -660,28 +447,9 @@ nav {
   gap: 0.5rem;
 }
 
-.blur-label {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--red);
-  text-transform: uppercase;
-}
-
-.blur-sub {
-  font-family: var(--mono);
-  font-size: 0.5rem;
-  letter-spacing: 0.15em;
-  color: rgba(245,240,235,0.4);
-  text-transform: uppercase;
-}
-
-.lock-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.3;
-}
+.blur-label { font-family: var(--mono); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; color: var(--red); text-transform: uppercase; }
+.blur-sub { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.15em; color: rgba(245,240,235,0.4); text-transform: uppercase; }
+.lock-icon { font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.3; }
 
 .squad-tag {
   position: absolute;
@@ -694,6 +462,7 @@ nav {
   color: var(--black);
   padding: 0.3rem 0.6rem;
   text-transform: uppercase;
+  z-index: 2;
 }
 
 .squad-info {
@@ -701,25 +470,12 @@ nav {
   bottom: 0; left: 0; right: 0;
   padding: 0.8rem;
   background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+  z-index: 2;
 }
 
-.squad-name {
-  font-family: var(--display);
-  font-size: 1.2rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
-}
+.squad-name { font-family: var(--display); font-size: 1.2rem; letter-spacing: 0.05em; color: var(--white); }
+.squad-meta { font-family: var(--mono); font-size: 0.5rem; color: rgba(245,240,235,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
 
-.squad-meta {
-  font-family: var(--mono);
-  font-size: 0.5rem;
-  color: rgba(245,240,235,0.6);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 0.2rem;
-}
-
-/* Placeholder silhouette */
 .squad-placeholder {
   width: 100%;
   height: 100%;
@@ -729,26 +485,10 @@ nav {
   justify-content: center;
 }
 
-.squad-placeholder svg {
-  width: 40%;
-  height: 40%;
-  fill: #1a1a1a;
-}
+.squad-placeholder svg { width: 40%; height: 40%; fill: #1a1a1a; }
 
-/* ============================================
-   DESTINATIONS — HORIZONTAL SCROLL
-============================================ */
-#destinations {
-  padding: 6rem 0;
-  background: var(--black);
-  border-top: 2px solid rgba(245,240,235,0.1);
-  overflow: hidden;
-}
-
-.dest-header {
-  padding: 0 3rem;
-  margin-bottom: 3rem;
-}
+#destinations { padding: 6rem 0; background: var(--black); border-top: 2px solid rgba(245,240,235,0.1); overflow: hidden; }
+.dest-header { padding: 0 3rem; margin-bottom: 3rem; }
 
 .dest-scroll-wrap {
   display: flex;
@@ -757,6 +497,7 @@ nav {
   overflow-x: auto;
   scrollbar-width: none;
   cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 .dest-scroll-wrap::-webkit-scrollbar { display: none; }
 .dest-scroll-wrap:active { cursor: grabbing; }
@@ -773,9 +514,6 @@ nav {
   width: 100%;
   height: 100%;
   background: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.4s ease;
 }
 
@@ -814,13 +552,7 @@ nav {
   text-transform: uppercase;
 }
 
-.dest-name {
-  font-family: var(--display);
-  font-size: 3rem;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  line-height: 1;
-}
+.dest-name { font-family: var(--display); font-size: 3rem; letter-spacing: 0.04em; color: var(--white); line-height: 1; }
 
 .dest-country {
   font-family: var(--mono);
@@ -832,7 +564,6 @@ nav {
   background: rgba(10,10,10,0.6);
   display: inline-block;
   padding: 2px 6px;
-  border-radius: 2px;
 }
 
 .dest-cta {
@@ -850,46 +581,16 @@ nav {
 
 .dest-card:hover .dest-cta { opacity: 1; transform: translateY(0); }
 
+#apply { background: var(--white); color: var(--black); padding: 8rem 3rem; border-top: 8px solid var(--red); }
 
-/* ============================================
-   MULTI-STEP FORM
-============================================ */
-#apply {
-  background: var(--white);
-  color: var(--black);
-  padding: 8rem 3rem;
-  border-top: 8px solid var(--red);
-}
+.form-header-main { margin-bottom: 4rem; }
 
-.form-header-main {
-  margin-bottom: 4rem;
-}
+.form-main-title { font-family: var(--display); font-size: clamp(4rem, 10vw, 9rem); line-height: 0.9; letter-spacing: 0.02em; color: var(--black); }
+.form-main-sub { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(10,10,10,0.4); text-transform: uppercase; margin-top: 1rem; }
 
-.form-main-title {
-  font-family: var(--display);
-  font-size: clamp(4rem, 10vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: var(--black);
-}
+.form-container { max-width: 800px; }
 
-.form-main-sub {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: rgba(10,10,10,0.4);
-  text-transform: uppercase;
-  margin-top: 1rem;
-}
-
-.form-container {
-  max-width: 800px;
-}
-
-/* Progress */
-.form-progress {
-  margin-bottom: 3rem;
-}
+.form-progress { margin-bottom: 3rem; }
 
 .progress-steps {
   display: flex;
@@ -905,11 +606,7 @@ nav {
 
 .progress-steps .active { color: var(--red); }
 
-.form-progress-bar {
-  width: 100%;
-  height: 3px;
-  background: rgba(10,10,10,0.15);
-}
+.form-progress-bar { width: 100%; height: 3px; background: rgba(10,10,10,0.15); }
 
 .form-progress-fill {
   height: 100%;
@@ -918,12 +615,7 @@ nav {
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Steps */
-.form-step {
-  display: none;
-  animation: slideIn 0.25s ease forwards;
-}
-
+.form-step { display: none; animation: slideIn 0.25s ease forwards; }
 .form-step.active { display: block; }
 
 @keyframes slideIn {
@@ -936,16 +628,7 @@ nav {
   to { opacity: 0; transform: translateX(-30px); }
 }
 
-.step-label {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 0.6rem;
-  display: block;
-}
+.step-label { font-family: var(--mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 0.6rem; display: block; }
 
 .form-input {
   width: 100%;
@@ -984,15 +667,9 @@ nav {
 .form-textarea:focus { border-color: var(--red); }
 
 .form-field { margin-bottom: 2.5rem; }
-
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 
-/* Gender Toggle */
-.gender-toggle {
-  display: flex;
-  gap: 0;
-  margin-top: 0.5rem;
-}
+.gender-toggle { display: flex; gap: 0; margin-top: 0.5rem; }
 
 .gender-btn {
   flex: 1;
@@ -1006,57 +683,25 @@ nav {
   color: var(--black);
   padding: 0.8rem;
   cursor: none;
-  transition: background 0s, color 0s;
   margin-right: -2px;
 }
 
-.gender-btn.selected {
-  background: var(--black);
-  color: var(--white);
-}
+.gender-btn.selected { background: var(--black); color: var(--white); }
 
-/* Personality Tiles */
-.personality-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  margin-top: 0.5rem;
-  border: 2px solid var(--black);
-}
+.personality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 0.5rem; border: 2px solid var(--black); }
 
 .personality-tile {
   padding: 1.2rem 1rem;
   border: 1px solid rgba(10,10,10,0.15);
   cursor: none;
-  transition: background 0s;
   position: relative;
 }
 
 .personality-tile:hover { background: rgba(10,10,10,0.05); }
+.personality-tile.selected { background: var(--black); color: var(--white); }
 
-.personality-tile.selected {
-  background: var(--black);
-  color: var(--white);
-}
-
-.personality-tile.selected .tile-check { display: block; }
-
-.tile-title {
-  font-family: var(--display);
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
-  display: block;
-}
-
-.tile-sub {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.1em;
-  color: rgba(10,10,10,0.5);
-  display: block;
-  margin-top: 0.2rem;
-}
-
+.tile-title { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.05em; display: block; }
+.tile-sub { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; color: rgba(10,10,10,0.5); display: block; margin-top: 0.2rem; }
 .personality-tile.selected .tile-sub { color: rgba(245,240,235,0.5); }
 
 .tile-check {
@@ -1074,12 +719,7 @@ nav {
 
 .personality-tile.selected .tile-check { display: flex; }
 
-/* Form Nav */
-.form-nav {
-  display: flex;
-  gap: 1rem;
-  margin-top: 3rem;
-}
+.form-nav { display: flex; gap: 1rem; margin-top: 3rem; }
 
 .btn-next, .btn-prev, .btn-submit {
   font-family: var(--display);
@@ -1091,72 +731,21 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  transition: background 0s, color 0s;
 }
 
-.btn-next, .btn-submit {
-  background: var(--red);
-  color: var(--black);
-  flex: 1;
-  justify-content: space-between;
-}
+.btn-next, .btn-submit { background: var(--red); color: var(--black); flex: 1; justify-content: space-between; }
+.btn-next:hover, .btn-submit:hover { background: var(--black); color: var(--white); }
+.btn-prev { background: transparent; color: var(--black); border: 2px solid var(--black); }
+.btn-prev:hover { background: var(--black); color: var(--white); }
 
-.btn-next:hover, .btn-submit:hover {
-  background: var(--black);
-  color: var(--white);
-}
-
-.btn-prev {
-  background: transparent;
-  color: var(--black);
-  border: 2px solid var(--black);
-}
-
-.btn-prev:hover {
-  background: var(--black);
-  color: var(--white);
-}
-
-/* Success State */
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 4rem 2rem;
-  animation: slideIn 0.3s ease;
-}
-
+.form-success { display: none; text-align: center; padding: 4rem 2rem; }
 .form-success.show { display: block; }
 
-.success-icon {
-  font-family: var(--display);
-  font-size: 6rem;
-  color: var(--red);
-  display: block;
-  margin-bottom: 1rem;
-}
+.success-icon { font-family: var(--display); font-size: 6rem; color: var(--red); display: block; margin-bottom: 1rem; }
+.success-title { font-family: var(--display); font-size: 3.5rem; letter-spacing: 0.05em; color: var(--black); margin-bottom: 1rem; }
+.success-sub { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em; color: rgba(10,10,10,0.5); line-height: 2; }
 
-.success-title {
-  font-family: var(--display);
-  font-size: 3.5rem;
-  letter-spacing: 0.05em;
-  color: var(--black);
-  margin-bottom: 1rem;
-}
-
-.success-sub {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  color: rgba(10,10,10,0.5);
-  line-height: 2;
-}
-
-/* Loading */
-.btn-submit.loading {
-  pointer-events: none;
-  background: var(--black);
-  color: var(--white);
-}
+.btn-submit.loading { pointer-events: none; background: var(--black); color: var(--white); }
 
 .spinner {
   width: 20px; height: 20px;
@@ -1170,25 +759,11 @@ nav {
 .btn-submit.loading .spinner { display: block; }
 .btn-submit.loading .submit-label { opacity: 0.5; }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* Error */
-.form-error {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: var(--red);
-  letter-spacing: 0.1em;
-  margin-top: 1rem;
-  display: none;
-}
-
+.form-error { font-family: var(--mono); font-size: 0.6rem; color: var(--red); letter-spacing: 0.1em; margin-top: 1rem; display: none; }
 .form-error.show { display: block; }
 
-/* ============================================
-   TESTIMONIALS
-============================================ */
 #testimonials {
   min-height: 100vh;
   display: flex;
@@ -1200,12 +775,7 @@ nav {
   padding: 6rem 3rem;
 }
 
-.testimonial-slide {
-  display: none;
-  text-align: center;
-  max-width: 1000px;
-}
-
+.testimonial-slide { display: none; text-align: center; max-width: 1000px; }
 .testimonial-slide.active { display: block; animation: slideIn 0.3s ease; }
 
 .verified-sticker {
@@ -1221,57 +791,16 @@ nav {
   text-transform: uppercase;
 }
 
-.quote-text {
-  font-family: var(--display);
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: 0.02em;
-  color: var(--white);
-}
+.quote-text { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1.05; letter-spacing: 0.02em; color: var(--white); }
+.quote-author { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.25em; color: rgba(245,240,235,0.5); margin-top: 2rem; text-transform: uppercase; }
 
-.quote-author {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  color: rgba(245,240,235,0.5);
-  margin-top: 2rem;
-  text-transform: uppercase;
-}
+.testimonial-nav { position: absolute; bottom: 3rem; left: 0; right: 0; display: flex; justify-content: center; gap: 3rem; }
 
-.testimonial-nav {
-  position: absolute;
-  bottom: 3rem;
-  left: 0; right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.t-btn {
-  background: none;
-  border: none;
-  font-size: 2.5rem;
-  color: var(--white);
-  opacity: 0.3;
-  cursor: none;
-  transition: opacity 0.15s;
-  padding: 0;
-}
-
+.t-btn { background: none; border: none; font-size: 2.5rem; color: var(--white); opacity: 0.3; cursor: none; transition: opacity 0.15s; padding: 0; }
 .t-btn:hover { opacity: 1; }
 
-.t-counter {
-  position: absolute;
-  top: 3rem; right: 3rem;
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: rgba(245,240,235,0.3);
-}
+.t-counter { position: absolute; top: 3rem; right: 3rem; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(245,240,235,0.3); }
 
-/* ============================================
-   FOOTER (STRIPPED DOWN MINIMAL)
-============================================ */
 footer {
   background: var(--black);
   border-top: 4px solid var(--red);
@@ -1280,28 +809,18 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10rem 2rem; /* Huge padding for impact */
+  padding: 10rem 2rem;
   cursor: pointer;
 }
 
 .footer-stripe {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 12px,
-    rgba(254,93,160,0.04) 12px,
-    rgba(254,93,160,0.04) 13px
-  );
+  background: repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(254,93,160,0.04) 12px, rgba(254,93,160,0.04) 13px);
   pointer-events: none;
 }
 
-.footer-main {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
+.footer-main { position: relative; z-index: 1; text-align: center; }
 
 .footer-big-text {
   font-family: var(--display);
@@ -1314,48 +833,37 @@ footer {
   transition: color 0.3s;
 }
 
-footer:hover .footer-big-text {
-  color: var(--red);
-}
+footer:hover .footer-big-text { color: var(--red); }
 
-/* ============================================
-   SCROLL REVEAL
-============================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-}
+.reveal { opacity: 0; transform: translateY(40px); }
 
-/* ============================================
-   RESPONSIVE
-============================================ */
 @media (max-width: 768px) {
+  nav { padding: 0 1.5rem; }
   .nav-links { display: none; }
   .steps-grid { grid-template-columns: 1fr; }
   .step-card { border-right: none; border-bottom: 1px solid rgba(245,240,235,0.2); }
-  .grid-layout { grid-template-columns: repeat(2, 1fr); }
-  .grid-item.large { grid-column: span 2; }
   .squad-grid { grid-template-columns: repeat(2, 1fr); }
   .form-grid { grid-template-columns: 1fr; }
   .personality-grid { grid-template-columns: 1fr; }
-  .footer-big-text { white-space: normal; font-size: 5rem; }
+  .footer-big-text { white-space: normal; font-size: 4rem; }
   .quota-row { grid-template-columns: 1fr; }
   .hero-content { padding: 4rem 1.5rem 3rem; }
   #apply, #how-it-works, #the-squad, #destinations { padding: 4rem 1.5rem; }
+  .section-counter { display: none; }
+  .dest-scroll-wrap { padding: 0 1.5rem; }
+  .dest-header { padding: 0 1.5rem; }
 }
 </style>
 </head>
 <body>
 
 <div class="cursor" id="cursor"></div>
-
 <div class="grain"></div>
-
 <div class="section-counter" id="sectionCounter">01</div>
 
 <nav>
   <a class="nav-logo" href="#">
-      <img src="./logo.png" alt="RAAHI Logo" style="height: 50px; display: block;">
+    <img src="./logo.png" alt="RAAHI Logo" style="height:50px;display:block;">
   </a>
   <ul class="nav-links">
     <li><a href="#the-squad">SQUADS</a></li>
@@ -1365,13 +873,10 @@ footer:hover .footer-big-text {
   <button class="nav-cta" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">APPLICATIONS OPEN</button>
 </nav>
 
+<!-- ═══ HERO ═══ -->
 <section id="hero" data-section="01">
-  <div class="hero-bg">
-    <div class="hero-bg-grid"></div>
-  </div>
-
+  <div class="hero-bg"><div class="hero-bg-grid"></div></div>
   <div class="hero-side-text">SEASON 01 — RAAHI — 2025</div>
-
   <div class="hero-content">
     <div class="hero-tag">LIVE: APPLICATIONS OPEN</div>
     <h1 class="hero-headline">
@@ -1390,41 +895,37 @@ footer:hover .footer-big-text {
       </div>
     </div>
   </div>
-
   <div class="marquee-wrap">
     <div class="marquee-track">
       <span>MANALI PEAKS</span><span>★</span>
       <span>KASOL TRAILS</span><span>★</span>
-      <span>JAIPUR NIGHTS</span><span>★</span>
-      <span>UDAIPUR SUNSETS</span><span>★</span>
+      <span>SPITI VALLEY</span><span>★</span>
       <span>RISHIKESH RAFTS</span><span>★</span>
+      <span>CHOPTA MEADOWS</span><span>★</span>
       <span>MANALI PEAKS</span><span>★</span>
       <span>KASOL TRAILS</span><span>★</span>
-      <span>JAIPUR NIGHTS</span><span>★</span>
-      <span>UDAIPUR SUNSETS</span><span>★</span>
+      <span>SPITI VALLEY</span><span>★</span>
       <span>RISHIKESH RAFTS</span><span>★</span>
+      <span>CHOPTA MEADOWS</span><span>★</span>
     </div>
   </div>
 </section>
 
+<!-- ═══ NUMBER BLOCK ═══ -->
 <section id="number-block" data-section="02">
   <div class="dot-grid"></div>
-  <div style="position:relative; z-index:2; text-align:center;">
+  <div style="position:relative;z-index:2;text-align:center;">
     <div class="big-number">10</div>
     <div class="number-overlay">
       <div class="number-overlay-text">SPOTS PER EXPEDITION</div>
     </div>
   </div>
-
-  <div class="progress-section" style="max-width:700px; margin: 2rem auto 0; position:relative; z-index:2;">
+  <div class="progress-section" style="max-width:700px;margin:2rem auto 0;position:relative;z-index:2;">
     <div class="progress-label">
       <span>SPOTS FILLED</span>
       <span id="progressPct">0%</span>
     </div>
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
-
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
     <div class="quota-row" style="margin-top:2rem;">
       <div class="quota-item">
         <h4>5 MEN</h4>
@@ -1438,12 +939,12 @@ footer:hover .footer-big-text {
   </div>
 </section>
 
+<!-- ═══ HOW IT WORKS ═══ -->
 <section id="how-it-works" data-section="03">
   <div class="section-header">
     <h2 class="section-title reveal">HOW IT<br/>GOES DOWN.</h2>
     <span class="section-meta reveal">03 / BLUEPRINT</span>
   </div>
-
   <div class="steps-grid reveal">
     <div class="step-card">
       <span class="step-num">01</span>
@@ -1453,33 +954,32 @@ footer:hover .footer-big-text {
     <div class="step-card">
       <span class="step-num">02</span>
       <div class="step-title">THE MATCH</div>
-      <p class="step-body">We pair 5 men and 5 women whose energies collide in interesting ways. Not just compatible — interesting. The kind of people who make stories happen.</p>
+      <p class="step-body">We pair 5 men and 5 women whose energies collide in interesting ways. Not just compatible — interesting. The kind of people who make stories happen in the hills.</p>
     </div>
     <div class="step-card">
       <span class="step-num">03</span>
       <div class="step-title">THE DISPATCH</div>
-      <p class="step-body">Fly in. Meet up. Start the journey. No rigid itineraries — just curated chaos, real moments, and a destination that becomes a backdrop for something unexpected.</p>
+      <p class="step-body">Show up. Meet strangers. Start moving. No rigid itineraries — just curated chaos through mountain roads, pine forests, and river banks that become the backdrop for something real.</p>
     </div>
   </div>
-
   <svg class="steps-connector" viewBox="0 0 1200 4" xmlns="http://www.w3.org/2000/svg">
     <line id="connectLine" x1="0" y1="2" x2="1200" y2="2" stroke="#FE5DA0" stroke-width="2" stroke-dasharray="1200" stroke-dashoffset="1200"/>
   </svg>
 </section>
 
+<!-- ═══ THE SQUAD ═══ -->
 <section id="the-squad" data-section="04">
   <div class="squad-headline reveal">
     <span style="display:block;overflow:hidden;"><span style="display:block;transform:translateY(110%);" class="squad-line">WHO</span></span>
     <span style="display:block;overflow:hidden;"><span style="display:block;transform:translateY(110%);" class="squad-line">GOES.</span></span>
   </div>
 
+  <!-- WOMEN -->
   <div style="margin-bottom:0.25rem;">
     <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;color:rgba(245,240,235,0.3);margin-bottom:0.5rem;text-transform:uppercase;">── WOMEN</div>
     <div class="squad-grid">
       <div class="squad-card">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
+        <img src="./g1.png" alt="Riya" loading="lazy"/>
         <div class="squad-tag">CONFIRMED</div>
         <div class="squad-info">
           <div class="squad-name">RIYA, 24</div>
@@ -1487,9 +987,7 @@ footer:hover .footer-big-text {
         </div>
       </div>
       <div class="squad-card">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
+        <img src="./g2.png" alt="Ananya" loading="lazy"/>
         <div class="squad-tag">CONFIRMED</div>
         <div class="squad-info">
           <div class="squad-name">ANANYA, 25</div>
@@ -1497,45 +995,26 @@ footer:hover .footer-big-text {
         </div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
     </div>
   </div>
 
+  <!-- MEN -->
   <div style="margin-top:1rem;">
     <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;color:rgba(245,240,235,0.3);margin-bottom:0.5rem;text-transform:uppercase;">── MEN</div>
     <div class="squad-grid">
       <div class="squad-card">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
+        <img src="./b1.png" alt="Arjun" loading="lazy"/>
         <div class="squad-tag">CONFIRMED</div>
         <div class="squad-info">
           <div class="squad-name">ARJUN, 26</div>
@@ -1543,58 +1022,33 @@ footer:hover .footer-big-text {
         </div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
       <div class="squad-card blurred">
-        <div class="squad-placeholder">
-          <svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg>
-        </div>
-        <div class="blur-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="blur-label">APPLY TO REVEAL</div>
-          <div class="blur-sub">IDENTITY BLURRED</div>
-        </div>
+        <div class="squad-placeholder"><svg viewBox="0 0 200 300"><ellipse cx="100" cy="80" rx="50" ry="55"/><path d="M20 300 Q20 180 100 165 Q180 180 180 300Z"/></svg></div>
+        <div class="blur-overlay"><div class="lock-icon">🔒</div><div class="blur-label">APPLY TO REVEAL</div><div class="blur-sub">IDENTITY BLURRED</div></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ DESTINATIONS ═══ -->
 <section id="destinations" data-section="05">
   <div class="dest-header">
     <h2 class="section-title reveal">NEXT<br/>DESTINATIONS.</h2>
   </div>
   <div class="dest-scroll-wrap" id="destScroll">
     <div class="dest-card">
-      <div class="dest-card-bg">
-        <div class="dest-card-bg-inner" style="background-image: url('./manali.jpg');"></div>
-      </div>
+      <div class="dest-card-bg"><div class="dest-card-bg-inner" style="background-image:url('./manali.jpg');"></div></div>
       <div class="dest-card-content">
         <div class="dest-trip-tag">JUNE 2025</div>
         <div class="dest-name">MANALI</div>
@@ -1603,9 +1057,7 @@ footer:hover .footer-big-text {
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-card-bg">
-        <div class="dest-card-bg-inner" style="background-image: url('./kasol.jpg');"></div>
-      </div>
+      <div class="dest-card-bg"><div class="dest-card-bg-inner" style="background-image:url('./kasol.jpg');"></div></div>
       <div class="dest-card-content">
         <div class="dest-trip-tag">JULY 2025</div>
         <div class="dest-name">KASOL</div>
@@ -1614,34 +1066,28 @@ footer:hover .footer-big-text {
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-card-bg">
-        <div class="dest-card-bg-inner" style="background-image: url('./jaipur.jpg');"></div>
-      </div>
+      <div class="dest-card-bg"><div class="dest-card-bg-inner" style="background-image:url('./spiti.jpg');"></div></div>
       <div class="dest-card-content">
         <div class="dest-trip-tag">AUG 2025</div>
-        <div class="dest-name">JAIPUR</div>
-        <div class="dest-country">RAJASTHAN · INDIA</div>
+        <div class="dest-name">SPITI</div>
+        <div class="dest-country">HIMACHAL PRADESH · INDIA</div>
         <div class="dest-cta">VIEW DETAILS →</div>
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-card-bg">
-        <div class="dest-card-bg-inner" style="background-image: url('./udaipur.jpg');"></div>
-      </div>
+      <div class="dest-card-bg"><div class="dest-card-bg-inner" style="background-image:url('./rishikesh.jpg');"></div></div>
       <div class="dest-card-content">
         <div class="dest-trip-tag">SEP 2025</div>
-        <div class="dest-name">UDAIPUR</div>
-        <div class="dest-country">RAJASTHAN · INDIA</div>
+        <div class="dest-name">RISHIKESH</div>
+        <div class="dest-country">UTTARAKHAND · INDIA</div>
         <div class="dest-cta">VIEW DETAILS →</div>
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-card-bg">
-        <div class="dest-card-bg-inner" style="background-image: url('./rishikesh.jpg');"></div>
-      </div>
+      <div class="dest-card-bg"><div class="dest-card-bg-inner" style="background-image:url('./chopta.jpg');"></div></div>
       <div class="dest-card-content">
         <div class="dest-trip-tag">OCT 2025</div>
-        <div class="dest-name">RISHIKESH</div>
+        <div class="dest-name">CHOPTA</div>
         <div class="dest-country">UTTARAKHAND · INDIA</div>
         <div class="dest-cta">VIEW DETAILS →</div>
       </div>
@@ -1649,12 +1095,12 @@ footer:hover .footer-big-text {
   </div>
 </section>
 
+<!-- ═══ APPLY ═══ -->
 <section id="apply" data-section="06">
   <div class="form-header-main">
     <h2 class="form-main-title reveal">YOUR<br/>APPLICATION.</h2>
     <p class="form-main-sub reveal">We read every word. Be real.</p>
   </div>
-
   <div class="form-container">
     <div class="form-progress">
       <div class="progress-steps">
@@ -1662,9 +1108,7 @@ footer:hover .footer-big-text {
         <span id="step-label-2">02 — YOUR VIBE</span>
         <span id="step-label-3">03 — FINAL DETAILS</span>
       </div>
-      <div class="form-progress-bar">
-        <div class="form-progress-fill" id="formProgressFill"></div>
-      </div>
+      <div class="form-progress-bar"><div class="form-progress-fill" id="formProgressFill"></div></div>
     </div>
 
     <div class="form-step active" id="step1">
@@ -1679,7 +1123,7 @@ footer:hover .footer-big-text {
         </div>
         <div class="form-field">
           <label class="step-label">CITY</label>
-          <input class="form-input" id="f-city" placeholder="MUMBAI" type="text"/>
+          <input class="form-input" id="f-city" placeholder="DELHI" type="text"/>
         </div>
       </div>
       <div class="form-field">
@@ -1692,9 +1136,7 @@ footer:hover .footer-big-text {
         <input type="hidden" id="f-gender" value=""/>
       </div>
       <div class="form-nav">
-        <button class="btn-next" onclick="goToStep(2)" type="button">
-          NEXT PHASE <span>→</span>
-        </button>
+        <button class="btn-next" onclick="goToStep(2)" type="button">NEXT PHASE <span>→</span></button>
       </div>
     </div>
 
@@ -1709,7 +1151,7 @@ footer:hover .footer-big-text {
           </div>
           <div class="personality-tile" onclick="selectPersonality(this,'THE ROMANTIC')">
             <span class="tile-title">THE ROMANTIC</span>
-            <span class="tile-sub">Sunsets over nightclubs.</span>
+            <span class="tile-sub">Sunsets over everything.</span>
             <div class="tile-check">✓</div>
           </div>
           <div class="personality-tile" onclick="selectPersonality(this,'THE CHAOS AGENT')">
@@ -1729,7 +1171,7 @@ footer:hover .footer-big-text {
           </div>
           <div class="personality-tile" onclick="selectPersonality(this,'THE FOODIE')">
             <span class="tile-title">THE FOODIE</span>
-            <span class="tile-sub">The trip is the menu.</span>
+            <span class="tile-sub">Dal chawal at a dhaba hits different up there.</span>
             <div class="tile-check">✓</div>
           </div>
         </div>
@@ -1748,7 +1190,7 @@ footer:hover .footer-big-text {
     <div class="form-step" id="step3">
       <div class="form-field">
         <label class="step-label">PREFERRED DESTINATION</label>
-        <input class="form-input" id="f-dest" placeholder="MANALI, JAIPUR..." type="text"/>
+        <input class="form-input" id="f-dest" placeholder="MANALI, KASOL, SPITI..." type="text"/>
       </div>
       <div class="form-field">
         <label class="step-label">INSTAGRAM HANDLE (OPTIONAL)</label>
@@ -1781,33 +1223,33 @@ footer:hover .footer-big-text {
   </div>
 </section>
 
+<!-- ═══ TESTIMONIALS ═══ -->
 <section id="testimonials" data-section="07">
   <div class="t-counter" id="tCounter">01 / 03</div>
-
-  <div style="width:100%; max-width:1000px; margin:0 auto;">
+  <div style="width:100%;max-width:1000px;margin:0 auto;">
     <div class="testimonial-slide active" id="t1">
       <div class="verified-sticker">✓ VERIFIED TRAVELLER</div>
-      <div class="quote-text">"IT WASN'T JUST A TRIP. IT WAS A TOTAL SYSTEM OVERHAUL. MET MY CO-FOUNDER IN MUMBAI."</div>
-      <div class="quote-author">— ARJUN, 23 · BANGALORE · MUMBAI TRIP DEC 2024</div>
+      <div class="quote-text">"IT WASN'T JUST A TRIP. IT WAS A TOTAL SYSTEM OVERHAUL. MET MY CO-FOUNDER SOMEWHERE BETWEEN KASOL AND KHEERGANGA."</div>
+      <div class="quote-author">— ARJUN, 26 · BANGALORE · KASOL TRIP NOV 2024</div>
     </div>
     <div class="testimonial-slide" id="t2">
       <div class="verified-sticker">✓ VERIFIED TRAVELLER</div>
-      <div class="quote-text">"I CAME FOR GOA. I LEFT WITH THREE PEOPLE I KNOW I'LL KNOW FOREVER. AND ONE I KNOW A LOT BETTER."</div>
-      <div class="quote-author">— RIYA, 24 · MUMBAI · GOA TRIP JAN 2025</div>
+      <div class="quote-text">"I CAME FOR THE MOUNTAINS. I LEFT WITH THREE PEOPLE I'LL KNOW FOREVER. AND ONE I KNOW A LOT BETTER."</div>
+      <div class="quote-author">— RIYA, 24 · MUMBAI · MANALI TRIP DEC 2024</div>
     </div>
     <div class="testimonial-slide" id="t3">
       <div class="verified-sticker">✓ VERIFIED TRAVELLER</div>
       <div class="quote-text">"RAAHI DOESN'T MANUFACTURE MOMENTS. IT JUST PUTS THE RIGHT PEOPLE IN THE RIGHT PLACE AND GETS OUT OF THE WAY."</div>
-      <div class="quote-author">— PRIYA, 27 · HYDERABAD · LEH TRIP FEB 2025</div>
+      <div class="quote-author">— PRIYA, 27 · HYDERABAD · SPITI TRIP JAN 2025</div>
     </div>
   </div>
-
   <div class="testimonial-nav">
     <button class="t-btn" onclick="prevTestimonial()">←</button>
     <button class="t-btn" onclick="nextTestimonial()">→</button>
   </div>
 </section>
 
+<!-- ═══ FOOTER ═══ -->
 <footer onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <div class="footer-stripe"></div>
   <div class="footer-main">
@@ -1816,138 +1258,88 @@ footer:hover .footer-big-text {
 </footer>
 
 <script>
-// ─────────────────────────────────────────
-// GOOGLE SHEETS — REPLACE THIS URL (We will do this next)
-// ─────────────────────────────────────────
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTOLEZc9JL5ztBX5R7JLyNJRdH3KqkeYeMQd7KHiIEkqeYI_JsuB0FzK3zkJDdN-TO/exec';
 
-// ─────────────────────────────────────────
-// GSAP SETUP
-// ─────────────────────────────────────────
 gsap.registerPlugin(ScrollTrigger);
 
-// ─────────────────────────────────────────
-// CUSTOM CURSOR
-// ─────────────────────────────────────────
-const cursor = document.getElementById('cursor');
-let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+// ── CURSOR ──
+var cursor = document.getElementById('cursor');
+var mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
 
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+document.addEventListener('mousemove', function(e) { mouseX = e.clientX; mouseY = e.clientY; });
 
-function animateCursor() {
+(function animateCursor() {
   cursorX += (mouseX - cursorX) * 0.18;
   cursorY += (mouseY - cursorY) * 0.18;
   cursor.style.left = (cursorX - 8) + 'px';
   cursor.style.top  = (cursorY - 8) + 'px';
   requestAnimationFrame(animateCursor);
-}
-animateCursor();
+})();
 
-document.querySelectorAll('a, button, .grid-item, .dest-card, .squad-card, .personality-tile, .t-btn, footer').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+document.querySelectorAll('a, button, .dest-card, .squad-card, .personality-tile, .t-btn, footer').forEach(function(el) {
+  el.addEventListener('mouseenter', function() { cursor.classList.add('hover'); });
+  el.addEventListener('mouseleave', function() { cursor.classList.remove('hover'); });
 });
 
-// ─────────────────────────────────────────
-// HERO — STAGGERED LINE REVEALS
-// ─────────────────────────────────────────
-gsap.to('.hero-headline .line-inner', {
-  y: 0,
-  duration: 0.9,
-  ease: 'power4.out',
-  stagger: 0.12,
-  delay: 0.3
-});
+// ── HERO REVEAL ──
+gsap.to('.hero-headline .line-inner', { y: 0, duration: 0.9, ease: 'power4.out', stagger: 0.12, delay: 0.3 });
 
-// ─────────────────────────────────────────
-// ODOMETER COUNT UP
-// ─────────────────────────────────────────
+// ── ODOMETER ──
 function countUp(el, target, duration) {
-  let start = 0;
-  const step = target / (duration / 16);
-  const timer = setInterval(() => {
+  var start = 0, step = target / (duration / 16);
+  var timer = setInterval(function() {
     start += step;
     if (start >= target) { start = target; clearInterval(timer); }
     el.textContent = Math.floor(start).toLocaleString();
   }, 16);
 }
-setTimeout(() => countUp(document.getElementById('odometer'), 2847, 1800), 600);
+setTimeout(function() { countUp(document.getElementById('odometer'), 2847, 1800); }, 600);
 
-// ─────────────────────────────────────────
-// SECTION COUNTER
-// ─────────────────────────────────────────
-const counter = document.getElementById('sectionCounter');
-const sections = document.querySelectorAll('section[data-section]');
-
-sections.forEach(sec => {
+// ── SECTION COUNTER ──
+var counter = document.getElementById('sectionCounter');
+document.querySelectorAll('section[data-section]').forEach(function(sec) {
   ScrollTrigger.create({
-    trigger: sec,
-    start: 'top 50%',
-    end: 'bottom 50%',
-    onEnter: () => { counter.textContent = sec.dataset.section; },
-    onEnterBack: () => { counter.textContent = sec.dataset.section; }
+    trigger: sec, start: 'top 50%', end: 'bottom 50%',
+    onEnter: function() { counter.textContent = sec.dataset.section; },
+    onEnterBack: function() { counter.textContent = sec.dataset.section; }
   });
 });
 
-// ─────────────────────────────────────────
-// SCROLL REVEALS
-// ─────────────────────────────────────────
-gsap.utils.toArray('.reveal').forEach(el => {
-  gsap.fromTo(el,
-    { opacity: 0, y: 50 },
-    {
-      opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 85%' }
-    }
-  );
-});
-
-// Squad headline lines
-gsap.utils.toArray('.squad-line').forEach((el, i) => {
-  gsap.to(el, {
-    y: 0, duration: 0.8, ease: 'power4.out',
-    scrollTrigger: { trigger: el, start: 'top 90%' },
-    delay: i * 0.1
+// ── SCROLL REVEALS ──
+gsap.utils.toArray('.reveal').forEach(function(el) {
+  gsap.fromTo(el, { opacity: 0, y: 50 }, {
+    opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+    scrollTrigger: { trigger: el, start: 'top 85%' }
   });
 });
 
-// Steps slam in
-gsap.utils.toArray('.step-card').forEach((card, i) => {
-  gsap.fromTo(card,
-    { opacity: 0, x: 60 },
-    {
-      opacity: 1, x: 0, duration: 0.5,
-      scrollTrigger: { trigger: card, start: 'top 88%' },
-      delay: i * 0.15
-    }
-  );
+gsap.utils.toArray('.squad-line').forEach(function(el, i) {
+  gsap.to(el, { y: 0, duration: 0.8, ease: 'power4.out', scrollTrigger: { trigger: el, start: 'top 90%' }, delay: i * 0.1 });
 });
 
-// ─────────────────────────────────────────
-// SVG CONNECTOR LINE
-// ─────────────────────────────────────────
+gsap.utils.toArray('.step-card').forEach(function(card, i) {
+  gsap.fromTo(card, { opacity: 0, x: 60 }, {
+    opacity: 1, x: 0, duration: 0.5,
+    scrollTrigger: { trigger: card, start: 'top 88%' },
+    delay: i * 0.15
+  });
+});
+
+// ── SVG LINE ──
 gsap.to('#connectLine', {
-  strokeDashoffset: 0,
-  duration: 1.2,
-  ease: 'power2.out',
+  strokeDashoffset: 0, duration: 1.2, ease: 'power2.out',
   scrollTrigger: { trigger: '#connectLine', start: 'top 85%' }
 });
 
-// ─────────────────────────────────────────
-// PROGRESS BAR (number block)
-// ─────────────────────────────────────────
+// ── PROGRESS BAR ──
 ScrollTrigger.create({
-  trigger: '#number-block',
-  start: 'top 70%',
-  onEnter: () => {
-    const fill = document.getElementById('progressFill');
-    const pct = document.getElementById('progressPct');
-    let p = 0;
-    const timer = setInterval(() => {
-      p += 1;
+  trigger: '#number-block', start: 'top 70%',
+  onEnter: function() {
+    var fill = document.getElementById('progressFill');
+    var pct = document.getElementById('progressPct');
+    var p = 0;
+    var timer = setInterval(function() {
+      p++;
       fill.style.width = p + '%';
       pct.textContent = p + '%';
       if (p >= 80) clearInterval(timer);
@@ -1955,129 +1347,89 @@ ScrollTrigger.create({
   }
 });
 
-// ─────────────────────────────────────────
-// DESTINATION DRAG SCROLL
-// ─────────────────────────────────────────
-const destScroll = document.getElementById('destScroll');
-let isDown = false, startX, scrollLeft;
+// ── DEST DRAG SCROLL ──
+var destScroll = document.getElementById('destScroll');
+var isDown = false, startX, scrollLeft;
 
-destScroll.addEventListener('mousedown', e => {
-  isDown = true;
-  startX = e.pageX - destScroll.offsetLeft;
-  scrollLeft = destScroll.scrollLeft;
-});
-destScroll.addEventListener('mouseleave', () => isDown = false);
-destScroll.addEventListener('mouseup', () => isDown = false);
-destScroll.addEventListener('mousemove', e => {
+destScroll.addEventListener('mousedown', function(e) { isDown = true; startX = e.pageX - destScroll.offsetLeft; scrollLeft = destScroll.scrollLeft; });
+destScroll.addEventListener('mouseleave', function() { isDown = false; });
+destScroll.addEventListener('mouseup', function() { isDown = false; });
+destScroll.addEventListener('mousemove', function(e) {
   if (!isDown) return;
   e.preventDefault();
-  const x = e.pageX - destScroll.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  destScroll.scrollLeft = scrollLeft - walk;
+  destScroll.scrollLeft = scrollLeft - (e.pageX - destScroll.offsetLeft - startX) * 1.5;
 });
 
-// ─────────────────────────────────────────
-// PARALLAX ON HERO GRID
-// ─────────────────────────────────────────
+// Touch support
+destScroll.addEventListener('touchstart', function(e) { startX = e.touches[0].pageX; scrollLeft = destScroll.scrollLeft; }, { passive: true });
+destScroll.addEventListener('touchmove', function(e) { destScroll.scrollLeft = scrollLeft - (e.touches[0].pageX - startX); }, { passive: true });
+
+// ── PARALLAX ──
 gsap.to('.hero-bg-grid', {
-  y: -120,
-  ease: 'none',
+  y: -120, ease: 'none',
   scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
 });
 
-// ─────────────────────────────────────────
-// MULTI-STEP FORM LOGIC
-// ─────────────────────────────────────────
-let currentStep = 1;
-let selectedGender = '';
-let selectedPersonality = '';
+// ── FORM ──
+var currentStep = 1;
+var selectedGender = '';
+var selectedPersonality = '';
 
 function goToStep(step) {
-  // Validate step 1
   if (currentStep === 1 && step === 2) {
-    const name = document.getElementById('f-name').value.trim();
-    const age  = document.getElementById('f-age').value;
-    if (!name || !age) { alert('Please fill in your name and age.'); return; }
+    if (!document.getElementById('f-name').value.trim() || !document.getElementById('f-age').value) {
+      alert('Please fill in your name and age.');
+      return;
+    }
   }
-
-  // Slide out current
-  const current = document.getElementById('step' + currentStep);
+  var current = document.getElementById('step' + currentStep);
   current.style.animation = 'slideOut 0.2s ease forwards';
-
-  setTimeout(() => {
+  setTimeout(function() {
     current.classList.remove('active');
     current.style.animation = '';
-
     currentStep = step;
-    const next = document.getElementById('step' + currentStep);
-    next.classList.add('active');
-
-    // Update progress bar
-    const fills = [33.33, 66.66, 100];
-    document.getElementById('formProgressFill').style.width = fills[step - 1] + '%';
-
-    // Update step labels
-    ['1','2','3'].forEach(n => {
+    document.getElementById('step' + currentStep).classList.add('active');
+    document.getElementById('formProgressFill').style.width = [33.33, 66.66, 100][step - 1] + '%';
+    ['1','2','3'].forEach(function(n) {
       document.getElementById('step-label-' + n).classList.toggle('active', n == step);
     });
   }, 200);
 }
 
 function selectGender(btn, value) {
-  document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('.gender-btn').forEach(function(b) { b.classList.remove('selected'); });
   btn.classList.add('selected');
   selectedGender = value;
   document.getElementById('f-gender').value = value;
 }
 
 function selectPersonality(tile, value) {
-  document.querySelectorAll('.personality-tile').forEach(t => t.classList.remove('selected'));
+  document.querySelectorAll('.personality-tile').forEach(function(t) { t.classList.remove('selected'); });
   tile.classList.add('selected');
   selectedPersonality = value;
   document.getElementById('f-personality').value = value;
 }
 
 async function submitForm() {
-  const btn = document.getElementById('submitBtn');
-  const errorEl = document.getElementById('formError');
-
-  const payload = {
-    name:        document.getElementById('f-name').value.trim(),
-    age:         document.getElementById('f-age').value,
-    gender:      selectedGender,
-    city:        document.getElementById('f-city').value.trim(),
+  var btn = document.getElementById('submitBtn');
+  var errorEl = document.getElementById('formError');
+  var payload = {
+    name: document.getElementById('f-name').value.trim(),
+    age: document.getElementById('f-age').value,
+    gender: selectedGender,
+    city: document.getElementById('f-city').value.trim(),
     personality: selectedPersonality,
-    why:         document.getElementById('f-why').value.trim(),
+    why: document.getElementById('f-why').value.trim(),
     destination: document.getElementById('f-dest').value.trim(),
-    social:      document.getElementById('f-social').value.trim(),
-    looking:     document.getElementById('f-looking').value.trim(),
-    timestamp:   new Date().toISOString()
+    social: document.getElementById('f-social').value.trim(),
+    looking: document.getElementById('f-looking').value.trim(),
+    timestamp: new Date().toISOString()
   };
-
-  if (!payload.name || !payload.age) {
-    alert('Please complete all required fields.');
-    return;
-  }
-
+  if (!payload.name || !payload.age) { alert('Please complete all required fields.'); return; }
   btn.classList.add('loading');
   errorEl.classList.remove('show');
-
-  // If no real URL set, simulate success
-  if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-    setTimeout(() => {
-      btn.classList.remove('loading');
-      showSuccess();
-    }, 1800);
-    return;
-  }
-
   try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+    await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     showSuccess();
   } catch (err) {
     btn.classList.remove('loading');
@@ -2088,46 +1440,29 @@ async function submitForm() {
 function showSuccess() {
   document.getElementById('step3').classList.remove('active');
   document.getElementById('formProgressFill').style.width = '100%';
-  const s = document.getElementById('formSuccess');
+  var s = document.getElementById('formSuccess');
   s.classList.add('show');
   gsap.fromTo(s, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
 }
 
-// ─────────────────────────────────────────
-// TESTIMONIAL SLIDER
-// ─────────────────────────────────────────
-let tCurrent = 1;
-const tTotal = 3;
+// ── TESTIMONIALS ──
+var tCurrent = 1, tTotal = 3;
 
 function showTestimonial(n) {
-  document.querySelectorAll('.testimonial-slide').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.testimonial-slide').forEach(function(s) { s.classList.remove('active'); });
   document.getElementById('t' + n).classList.add('active');
-  document.getElementById('tCounter').textContent =
-    String(n).padStart(2,'0') + ' / ' + String(tTotal).padStart(2,'0');
+  document.getElementById('tCounter').textContent = String(n).padStart(2,'0') + ' / ' + String(tTotal).padStart(2,'0');
 }
 
-function nextTestimonial() {
-  tCurrent = tCurrent >= tTotal ? 1 : tCurrent + 1;
-  showTestimonial(tCurrent);
-}
+function nextTestimonial() { tCurrent = tCurrent >= tTotal ? 1 : tCurrent + 1; showTestimonial(tCurrent); }
+function prevTestimonial() { tCurrent = tCurrent <= 1 ? tTotal : tCurrent - 1; showTestimonial(tCurrent); }
 
-function prevTestimonial() {
-  tCurrent = tCurrent <= 1 ? tTotal : tCurrent - 1;
-  showTestimonial(tCurrent);
-}
-
-// Auto-rotate testimonials
 setInterval(nextTestimonial, 5000);
 
-// ─────────────────────────────────────────
-// FOOTER BIG TEXT — SCROLL PARALLAX
-// ─────────────────────────────────────────
+// ── FOOTER ──
 gsap.fromTo('.footer-big-text',
   { scale: 0.95, opacity: 0.8 },
-  {
-    scale: 1, opacity: 1, ease: 'none',
-    scrollTrigger: { trigger: 'footer', start: 'top bottom', end: 'bottom bottom', scrub: 1 }
-  }
+  { scale: 1, opacity: 1, ease: 'none', scrollTrigger: { trigger: 'footer', start: 'top bottom', end: 'bottom bottom', scrub: 1 } }
 );
 </script>
 </body>
