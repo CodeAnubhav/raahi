@@ -96,7 +96,7 @@ nav{
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
   text-align:center;
-  padding:160px 24px 80px; /* Increased top padding to accommodate floating nav */
+  padding:160px 24px 80px;
   position:relative;
 }
 
@@ -413,6 +413,51 @@ section{padding:120px 48px}
 }
 .squad-ph svg{width:36%;height:36%;fill:var(--border)}
 
+/* ─── SAFETY ─── */
+#safety{
+  background:var(--cream);
+  padding:120px 48px;
+}
+.safe-top{
+  display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;
+  gap:24px;margin-bottom:64px;
+}
+.safe-top-left{max-width:600px;}
+.safe-top-left p{
+  font-size:16px;color:var(--muted);font-weight:300;line-height:1.6;margin-top:16px;
+}
+.safe-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--white);border:1px solid rgba(0,0,0,.04);
+  padding:12px 24px;border-radius:100px;
+  font-size:12px;font-weight:500;letter-spacing:.06em;
+  color:var(--black);box-shadow:0 8px 24px rgba(0,0,0,.03);
+}
+.safe-pill .dot{width:8px;height:8px;background:#10b981;border-radius:50%;}
+
+.safe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.safe-card{
+  background:var(--white);padding:32px;
+  border-radius:24px;
+  border:1px solid rgba(0,0,0,.03);
+  box-shadow:0 8px 24px rgba(0,0,0,.02);
+  transition:transform .3s ease;
+}
+.safe-card:hover{transform:translateY(-6px);}
+.safe-icon-wrap{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;
+}
+.safe-icon-wrap svg{width:22px;height:22px;}
+.safe-title{
+  font-family:var(--sans);font-size:16px;font-weight:500;
+  color:var(--black);margin-bottom:12px;
+}
+.safe-body{
+  font-size:14px;color:var(--muted);line-height:1.6;font-weight:300;
+}
+
 /* ─── TESTIMONIALS ─── */
 #testi{
   background:var(--white);border-top:1px solid var(--border);
@@ -571,6 +616,10 @@ footer{
 .reveal{opacity:0;transform:translateY(32px)}
 .reveal-fade{opacity:0}
 
+@media(max-width:1024px){
+  .safe-grid{grid-template-columns:repeat(2,1fr);}
+}
+
 @media(max-width:900px){
   nav{
     top:16px;
@@ -579,6 +628,7 @@ footer{
   }
   .nav-links{display:none}
   section{padding:80px 24px}
+  #safety{padding:80px 24px;}
   #stats{padding:60px 24px}
   .stats-grid{grid-template-columns:1fr;gap:1px}
   .how-grid{grid-template-columns:1fr}
@@ -589,13 +639,15 @@ footer{
   .f-grid{grid-template-columns:1fr}
   .pers-grid{grid-template-columns:1fr}
 }
+@media(max-width:600px){
+  .safe-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
 
 <div id="cur"></div>
 
-<!-- ─── NAV ─── -->
 <nav>
   <a class="nav-logo" href="#">
     <img src="./logo.png" alt="RAAHI Logo" style="height:50px;display:block;">
@@ -608,7 +660,6 @@ footer{
   <button class="nav-pill" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Join waitlist</button>
 </nav>
 
-<!-- ─── HERO ─── -->
 <section id="hero">
   <div class="hero-badge">
     <span class="hero-badge-dot"></span>
@@ -644,7 +695,6 @@ footer{
   </div>
 </section>
 
-<!-- ─── MARQUEE ─── -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
     <span>Manali</span><span class="dot">✦</span>
@@ -660,7 +710,6 @@ footer{
   </div>
 </div>
 
-<!-- ─── STATS ─── -->
 <div id="stats" aria-label="Raahi Club at a glance">
   <div class="stats-grid">
     <div class="stat-cell reveal">
@@ -678,7 +727,6 @@ footer{
   </div>
 </div>
 
-<!-- ─── HOW IT WORKS ─── -->
 <section id="how">
   <div>
     <span class="section-label reveal">How it works</span>
@@ -703,7 +751,6 @@ footer{
   </div>
 </section>
 
-<!-- ─── FOMO BLOCK ─── -->
 <section id="fomo">
   <div class="fomo-chip">
     <span class="hero-badge-dot"></span>
@@ -736,7 +783,6 @@ footer{
   </button>
 </section>
 
-<!-- ─── DESTINATIONS ─── -->
 <section id="dest">
   <div class="dest-intro">
     <div>
@@ -801,7 +847,6 @@ footer{
   </div>
 </section>
 
-<!-- ─── WHO GOES ─── -->
 <section id="squad">
   <div class="squad-intro">
     <span class="section-label">The people</span>
@@ -891,7 +936,52 @@ footer{
   </div>
 </section>
 
-<!-- ─── TESTIMONIALS ─── -->
+<section id="safety">
+  <div class="safe-top">
+    <div class="safe-top-left">
+      <h2 class="section-heading reveal">Good memories start with<br/><em>feeling safe.</em></h2>
+      <p class="reveal">You should never have to choose between adventure and peace of mind. Our safety architecture is designed to let your guard down.</p>
+    </div>
+    <div class="safe-pill reveal">
+      <span class="dot"></span> 24/7 LIVE MONITORING
+    </div>
+  </div>
+
+  <div class="safe-grid">
+    <div class="safe-card reveal">
+      <div class="safe-icon-wrap" style="background:rgba(249,115,22,.08);color:#ea580c;">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>
+      </div>
+      <h3 class="safe-title">Background Verified</h3>
+      <p class="safe-body">Every captain, host, and vendor undergoes strict multi-tier screening.</p>
+    </div>
+    
+    <div class="safe-card reveal">
+      <div class="safe-icon-wrap" style="background:rgba(236,72,153,.08);color:#db2777;">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM4 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 10.374 21c-2.331 0-4.512-.645-6.374-1.766Z" /></svg>
+      </div>
+      <h3 class="safe-title">Human Screening</h3>
+      <p class="safe-body">We curate groups carefully. No creeps, just people looking for genuine connection.</p>
+    </div>
+    
+    <div class="safe-card reveal">
+      <div class="safe-icon-wrap" style="background:rgba(59,130,246,.08);color:#2563eb;">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+      </div>
+      <h3 class="safe-title">Women-First Focus</h3>
+      <p class="safe-body">Dedicated safety protocols, verified stays, and trained captains for solo female travelers.</p>
+    </div>
+    
+    <div class="safe-card reveal">
+      <div class="safe-icon-wrap" style="background:rgba(168,85,247,.08);color:#9333ea;">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" /></svg>
+      </div>
+      <h3 class="safe-title">SOS Support</h3>
+      <p class="safe-body">Direct line to our emergency response team, active the moment your trip begins.</p>
+    </div>
+  </div>
+</section>
+
 <section id="testi">
   <span class="section-label reveal">From the crew</span>
   <h2 class="section-heading reveal">They came as strangers.<br/><em>Left as something else.</em></h2>
@@ -914,21 +1004,18 @@ footer{
   </div>
 </section>
 
-<!-- ─── WAITLIST FORM ─── -->
 <section id="apply">
   <span class="apply-label">Join the waitlist</span>
   <h2 class="apply-h2">Stop scrolling.<br/><em>Start going.</em></h2>
   <p class="apply-sub">Tell us a bit about yourself. We read every application. Be real — it's the fastest way to get shortlisted.</p>
 
   <div class="form-shell">
-    <!-- Step dots -->
     <div class="form-steps-row" id="step-dots">
       <div class="fstep active" id="dot1"></div>
       <div class="fstep" id="dot2"></div>
       <div class="fstep" id="dot3"></div>
     </div>
 
-    <!-- Step 1 -->
     <div class="form-step on" id="fs1">
       <label class="f-label">Full name</label>
       <input class="f-input" id="f-name" type="text" placeholder="Your name"/>
@@ -954,7 +1041,6 @@ footer{
       </div>
     </div>
 
-    <!-- Step 2 -->
     <div class="form-step" id="fs2">
       <label class="f-label">Your travel personality</label>
       <div class="pers-grid">
@@ -992,7 +1078,6 @@ footer{
       </div>
     </div>
 
-    <!-- Step 3 -->
     <div class="form-step" id="fs3">
       <label class="f-label">Preferred destination</label>
       <input class="f-input" id="f-dest" type="text" placeholder="Manali, Kasol, Spiti..."/>
@@ -1010,7 +1095,6 @@ footer{
       <div class="f-err" id="ferr">Connection issue — please try again.</div>
     </div>
 
-    <!-- Success -->
     <div class="f-success" id="fsucc">
       <span class="success-icon">✓</span>
       <div class="success-h">You're on the list.</div>
@@ -1023,7 +1107,6 @@ footer{
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
 <footer>
   <a class="footer-logo" href="#">
     <img src="./logo.png" alt="RAAHI Logo" style="height:50px;display:block;">
@@ -1042,7 +1125,7 @@ const cur=document.getElementById('cur');
 let mx=0,my=0,cx=0,cy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
 (function loop(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;cur.style.left=(cx-5)+'px';cur.style.top=(cy-5)+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button,.dest-card,.squad-card,.p-tile,.testi-card').forEach(el=>{
+document.querySelectorAll('a,button,.dest-card,.squad-card,.p-tile,.testi-card,.safe-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>cur.classList.add('hov'));
   el.addEventListener('mouseleave',()=>cur.classList.remove('hov'));
 });
