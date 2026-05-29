@@ -1720,9 +1720,9 @@
                         </div>
 
                         <a id="upi-mobile-btn" href="#"
-                            style="padding: 16px 32px; background: #fe5da0; color: #0e0e0e; border-radius: 99px; font-weight: 700; text-transform: uppercase; text-decoration: none; font-size: 14px;">
-                            Pay via UPI App ⚡
-                        </a>
+                        style="padding:16px 32px;background:#fe5da0;color:#0e0e0e;border-radius:99px;font-weight:700;text-transform:uppercase;text-decoration:none;font-size:14px;">
+                        Pay Now
+                     </a>
 
                         <div id="upi-desktop-qr" style="text-align: center;">
                             <p
@@ -1874,29 +1874,46 @@
             const s = document.getElementById('fsucc');
             s.classList.add('show');
 
-            // Show/Hide payment methods based on device
+            const upiBtn = document.getElementById('upi-mobile-btn');
+
+            const upiUrl =
+                "upi://pay?" +
+                "pa=9582405745@pthdfc" +
+                "&pn=Raahi" +
+                "&am=1000" +
+                "&cu=INR" +
+                "&tn=Raahi Registration Fee";
+
             if (isMobile) {
+
                 document.getElementById('upi-mobile-btn').style.display = 'inline-flex';
                 document.getElementById('upi-desktop-qr').style.display = 'none';
 
-                // OS DETECTION FOR SMART ROUTING
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                const upiBtn = document.getElementById('upi-mobile-btn');
+                // Remove any previous click handlers
+                const newBtn = upiBtn.cloneNode(true);
+                upiBtn.parentNode.replaceChild(newBtn, upiBtn);
 
-                if (isIOS) {
-                    // iOS handles app choosers perfectly with the standard protocol
-                    upiBtn.href = "upi://pay?pa=9582405745@pthdfc&pn=Raahi&am=1000&cu=INR";
-                } else {
-                    // Android uses the intent protocol to stop WhatsApp hijacking
-                    upiBtn.href = "intent://pay?pa=9582405745@pthdfc&pn=Raahi&am=1000&cu=INR#Intent;scheme=upi;end";
-                }
+                newBtn.href = upiUrl;
+
+                newBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // This opens Android/iPhone UPI app chooser
+                    window.location.href = upiUrl;
+                });
 
             } else {
+
                 document.getElementById('upi-mobile-btn').style.display = 'none';
                 document.getElementById('upi-desktop-qr').style.display = 'block';
+
             }
 
-            gsap.fromTo(s, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .5, ease: 'power3.out' });
+            gsap.fromTo(
+                s,
+                { opacity: 0, y: 24 },
+                { opacity: 1, y: 0, duration: 0.7 }
+            );
         }
 
         /* ── Toggle to the final Instagram Verification Screen ── */
