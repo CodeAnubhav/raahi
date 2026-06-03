@@ -1257,42 +1257,78 @@
     }
 
     /* ─── FOOTER ─── */
-    footer {
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      padding: 64px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
+ /* ─── FOOTER ─── */
 
-    .footer-logo {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
+.footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 40px 48px 24px;
+}
 
-    .footer-copy {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 300
-    }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
 
-    .footer-back {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 300;
-      background: none;
-      border: none;
-      cursor: none;
-      transition: color .15s;
-    }
+.footer-logo-wrap {
+  display: flex;
+  align-items: center;
+}
 
-    .footer-back:hover {
-      color: var(--black)
-    }
+.footer-logo img {
+  height: 38px;
+  display: block;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  transition: color .2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--accent);
+}
+
+.footer-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-action button {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-family: var(--sans);
+  cursor: none;
+  transition: color .2s ease;
+}
+
+.footer-action button:hover {
+  color: var(--black);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
+}
 
     /* ─── UTILS ─── */
     .reveal {
@@ -1791,12 +1827,32 @@
     </div>
   </section>
 
-<footer>
-    <a class="footer-logo" href="#">
-      <img src="./logo.png" alt="RAAHI Logo" style="height:35px;display:block;">
-    </a>
-    <p class="footer-copy">© 2026 Raahi Club · Made with ❤️ in India</p>
-    <button class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</button>
+  <footer class="footer">
+    <div class="footer-top">
+
+      <div class="footer-logo-wrap">
+        <a class="footer-logo" href="#">
+          <img src="./logo.png" alt="RAAHI Logo">
+        </a>
+      </div>
+
+      <div class="footer-nav">
+        <a href="raahi-privacy.html">Privacy Policy</a>
+        <a href="raahi-safety.html">Safety Policy</a>
+        <a href="raahi-terms.html">Terms & Conditions</a>
+      </div>
+
+      <div class="footer-action">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          ↑ Back to top
+        </button>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Raahi Club · Made with ❤️ in India
+    </div>
   </footer>
 
   <script>
