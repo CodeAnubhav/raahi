@@ -82,7 +82,6 @@
       opacity: .5
     }
 
-    /* ─── NAV (BUBBLE/FLOATING DESIGN) ─── */
     nav {
       position: fixed;
       top: 24px;
@@ -95,12 +94,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 24px;
-      background: rgba(255, 255, 255, .95);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
+
+      /* --- UPDATED FOR TRANSPARENCY --- */
+      background: rgba(255, 255, 255, 0.1);
+      /* Very light semi-transparent white */
+      backdrop-filter: blur(10px);
+      /* Keeps it readable with a soft blur */
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Fainter border */
       border-radius: 100px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
     }
 
     .nav-logo {
@@ -1578,6 +1582,18 @@
     </div>
     <div class="dest-scroll" id="dscroll">
 
+      <a href="kasol.html" class="dest-card">
+        <div class="dest-img" style="background-image:url('./kasol.jpg')"></div>
+        <div class="dest-info">
+          <span class="dest-month">July 2025 · Open</span>
+          <div>
+            <div class="dest-name">Kasol</div>
+            <div class="dest-sub">Himachal Pradesh</div>
+          </div>
+        </div>
+      </a>
+
+
       <div class="dest-card locked">
         <div class="dest-img" style="background-image:url('./manali.jpg')"></div>
         <div class="dest-info">
@@ -1589,16 +1605,6 @@
         </div>
       </div>
 
-      <a href="kasol.html" class="dest-card">
-        <div class="dest-img" style="background-image:url('./kasol.jpg')"></div>
-        <div class="dest-info">
-          <span class="dest-month">July 2025 · Open</span>
-          <div>
-            <div class="dest-name">Kasol</div>
-            <div class="dest-sub">Himachal Pradesh</div>
-          </div>
-        </div>
-      </a>
 
       <div class="dest-card locked">
         <div class="dest-img" style="background-image:url('./jaipur.jpg')"></div>
