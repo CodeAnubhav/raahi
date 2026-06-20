@@ -1763,16 +1763,9 @@
                 <label class="f-label">Preferred destination</label>
                 <input class="f-input" id="f-dest" type="text" value="Kasol (Launch Priority)" disabled
                     style="opacity: 0.7; cursor: not-allowed;" />
-                <div class="f-grid">
-                    <div>
-                        <label class="f-label">Instagram Handle</label>
-                        <input class="f-input" id="f-social" type="text" placeholder="@yourhandle" />
-                    </div>
-                    <div>
-                        <label class="f-label">Referral Code</label>
-                        <input class="f-input" id="f-referral" type="text" placeholder="Optional" />
-                    </div>
-                </div>
+                <label class="f-label">Instagram Handle</label>
+                <input class="f-input" id="f-social" type="text" placeholder="@yourhandle"
+                    style="margin-bottom: 16px;" />
                 <label class="f-label">What are you looking for on this trip?</label>
                 <textarea class="f-input f-textarea" id="f-looking"
                     placeholder="Be specific. Be honest. We'll know if you're not."></textarea>
@@ -1858,11 +1851,14 @@
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTOLEZc9JL5ztBX5R7JLyNJRdH3KqkeYeMQd7KHiIEkqeYI_JsuB0FzK3zkJDdN-TO/exec';
 
         // Read referral parameters
+        // --- INVISIBLE REFERRAL TRACKING --- //
         const urlParams = new URLSearchParams(window.location.search);
-        const urlReferral = urlParams.get('ref') || '';
-        document.addEventListener("DOMContentLoaded", () => {
-            if (urlReferral) document.getElementById('f-referral').value = urlReferral;
-        });
+        const incomingRef = urlParams.get('ref');
+
+        // If a creator link was used, save it invisibly in the browser
+        if (incomingRef) {
+            localStorage.setItem('raahi_creator_ref', incomingRef);
+        }
 
         // FAQ Interaction
         function toggleFaq(element) {
@@ -1906,11 +1902,10 @@
             const err = document.getElementById('ferr');
             // Check user agent for mobile device
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
             const payload = {
-                source: "Kasol Page", // NEW: Identifies the form source
+                source: "Kasol Page",
                 name: document.getElementById('f-name').value.trim(),
-                mobile: document.getElementById('f-mobile').value.trim(), // NEW: Mobile Number
+                mobile: document.getElementById('f-mobile').value.trim(),
                 age: document.getElementById('f-age').value,
                 gender,
                 city: document.getElementById('f-city').value.trim(),
@@ -1920,7 +1915,8 @@
                 social: document.getElementById('f-social').value.trim(),
                 looking: document.getElementById('f-looking').value.trim(),
                 timestamp: new Date().toISOString(),
-                referral: document.getElementById('f-referral').value.trim() || 'Direct',
+                // Grabs the saved code from the browser, defaults to 'Direct' if organic
+                referral: localStorage.getItem('raahi_creator_ref') || 'Direct',
                 paymentStatus: "Pending Verification"
             };
 
