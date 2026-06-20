@@ -1455,11 +1455,6 @@
       We match you with strangers and send you to the mountains. All you need to do is show up.
     </p>
 
-    <form class="hero-form" onsubmit="heroSubmit(event)">
-      <input type="email" id="hero-email" placeholder="Your email address" autocomplete="email" />
-      <button type="submit">Join waitlist →</button>
-    </form>
-
     <p class="hero-micro"><span id="count-txt">248</span> people already on the waitlist · <span>Only 10 spots per
         trip</span></p>
 
@@ -1869,6 +1864,14 @@
   <script>
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTOLEZc9JL5ztBX5R7JLyNJRdH3KqkeYeMQd7KHiIEkqeYI_JsuB0FzK3zkJDdN-TO/exec';
 
+    // --- INVISIBLE REFERRAL TRACKING --- //
+    const urlParams = new URLSearchParams(window.location.search);
+    const incomingRef = urlParams.get('ref');
+    if (incomingRef) {
+      localStorage.setItem('raahi_creator_ref', incomingRef);
+    }
+    // ----------------------------------- //
+
     gsap.registerPlugin(ScrollTrigger);
 
     /* ── cursor ── */
@@ -1973,9 +1976,9 @@
       const err = document.getElementById('ferr');
 
       const payload = {
-        source: "Home Page", // Identifies where this came from
+        source: "Home Page",
         name: document.getElementById('f-name').value.trim(),
-        mobile: document.getElementById('f-mobile').value.trim(), // Captures mobile
+        mobile: document.getElementById('f-mobile').value.trim(),
         age: document.getElementById('f-age').value,
         gender,
         city: document.getElementById('f-city').value.trim(),
@@ -1984,8 +1987,11 @@
         destination: document.getElementById('f-dest').value.trim(),
         social: document.getElementById('f-social').value.trim(),
         looking: document.getElementById('f-looking').value.trim(),
-        referral: "Direct", // Fallback since home page doesn't have a referral box
-        paymentStatus: "N/A", // Fallback since payment isn't required here
+
+        // PULLS THE SAVED CODE FROM MEMORY, DEFAULTS TO 'Direct'
+        referral: localStorage.getItem('raahi_creator_ref') || "Direct",
+
+        paymentStatus: "N/A",
         timestamp: new Date().toISOString()
       };
 
