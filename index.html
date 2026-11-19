@@ -10,7 +10,7 @@
   <meta name="description"
     content="RAAHI matches you with 9 strangers and sends you to the mountains. No bios. No swiping. No planning. Just show up. Join the waitlist." />
   <meta name="keywords"
-    content="RAAHI, travel with strangers, curated group travel India, Manali trip, Kasol trip, social travel, meet new people, adventure India, waitlist" />
+    content="RAAHI, travel with strangers, curated group travel India, Shoja trip, Jibhi trip, Jalori Pass, Tirthan Valley, Manali trip, Kasol trip, social travel, meet new people, adventure India, waitlist" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="RAAHI — Travel With Strangers" />
   <meta property="og:description"
@@ -736,6 +736,14 @@
       align-self: flex-start;
     }
 
+    /* Open trip badge */
+    .dest-month.is-open {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--black);
+      font-weight: 700;
+    }
+
     .dest-name {
       font-family: var(--serif);
       font-size: 32px;
@@ -751,6 +759,19 @@
       letter-spacing: .06em;
       text-transform: uppercase;
       font-weight: 300
+    }
+
+    .dest-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, .5);
+      padding-bottom: 2px;
+      align-self: flex-start;
     }
 
     /* Locked Destination Styles */
@@ -1272,7 +1293,6 @@
     }
 
     /* ─── FOOTER ─── */
-    /* ─── FOOTER ─── */
 
     .footer {
       background: var(--white);
@@ -1440,6 +1460,7 @@
     <ul class="nav-links">
       <li><a href="#how">How it works</a></li>
       <li><a href="#dest">Destinations</a></li>
+      <li><a href="shoja.html">Shoja trip</a></li>
     </ul>
     <button class="nav-pill" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Join
       waitlist</button>
@@ -1478,11 +1499,15 @@
 
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
+      <span>Shoja</span><span class="dot">✦</span>
+      <span>Jibhi</span><span class="dot">✦</span>
       <span>Manali</span><span class="dot">✦</span>
       <span>Kasol</span><span class="dot">✦</span>
       <span>Rishikesh</span><span class="dot">✦</span>
       <span>Jaipur</span><span class="dot">✦</span>
       <span>Udaipur</span><span class="dot">✦</span>
+      <span>Shoja</span><span class="dot">✦</span>
+      <span>Jibhi</span><span class="dot">✦</span>
       <span>Manali</span><span class="dot">✦</span>
       <span>Kasol</span><span class="dot">✦</span>
       <span>Rishikesh</span><span class="dot">✦</span>
@@ -1583,17 +1608,31 @@
     </div>
     <div class="dest-scroll" id="dscroll">
 
-      <a href="kasol.html" class="dest-card">
+      <!-- OPEN: Shoja. Add ./shoja.jpg to your site folder; the green gradient shows until then. -->
+      <a href="shoja.html" class="dest-card">
+        <div class="dest-img"
+          style="background-image:url('./shoja.jpg'), linear-gradient(160deg, #2c6a50 0%, #1f4d3a 55%, #16382a 100%)">
+        </div>
+        <div class="dest-info">
+          <span class="dest-month is-open">Dec 2026 · Open</span>
+          <div>
+            <div class="dest-name">Shoja</div>
+            <div class="dest-sub">Jibhi · Jalori · Tirthan</div>
+            <span class="dest-cta">See the trip</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="dest-card locked">
         <div class="dest-img" style="background-image:url('./kasol.jpg')"></div>
         <div class="dest-info">
-          <span class="dest-month">July 2025 · Open</span>
+          <span class="dest-month">🔒 Locked</span>
           <div>
             <div class="dest-name">Kasol</div>
             <div class="dest-sub">Himachal Pradesh</div>
           </div>
         </div>
-      </a>
-
+      </div>
 
       <div class="dest-card locked">
         <div class="dest-img" style="background-image:url('./manali.jpg')"></div>
@@ -1682,7 +1721,7 @@
         <div class="safe-icon-wrap" style="background:rgba(59,130,246,.08);color:#2563eb;">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
             <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.750 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
           </svg>
         </div>
         <h3 class="safe-title">Women-First Focus</h3>
@@ -1810,7 +1849,7 @@
 
       <div class="form-step" id="fs3">
         <label class="f-label">Preferred destination</label>
-        <input class="f-input" id="f-dest" type="text" placeholder="Manali, Kasol, Spiti..." />
+        <input class="f-input" id="f-dest" type="text" placeholder="Shoja, Manali, Spiti..." />
         <label class="f-label">Instagram (optional)</label>
         <input class="f-input" id="f-social" type="text" placeholder="@yourhandle" />
         <label class="f-label">What are you looking for on this trip?</label>
@@ -1937,11 +1976,13 @@
 
     /* ── destination drag scroll ── */
     const dscroll = document.getElementById('dscroll');
-    let down = false, sx, sl;
-    dscroll.addEventListener('mousedown', e => { down = true; sx = e.pageX - dscroll.offsetLeft; sl = dscroll.scrollLeft });
+    let down = false, sx, sl, dragged = false;
+    dscroll.addEventListener('mousedown', e => { down = true; dragged = false; sx = e.pageX - dscroll.offsetLeft; sl = dscroll.scrollLeft });
     dscroll.addEventListener('mouseleave', () => down = false);
     dscroll.addEventListener('mouseup', () => down = false);
-    dscroll.addEventListener('mousemove', e => { if (!down) return; e.preventDefault(); dscroll.scrollLeft = sl - (e.pageX - dscroll.offsetLeft - sx) * 1.4 });
+    dscroll.addEventListener('mousemove', e => { if (!down) return; e.preventDefault(); const dx = e.pageX - dscroll.offsetLeft - sx; if (Math.abs(dx) > 5) dragged = true; dscroll.scrollLeft = sl - dx * 1.4 });
+    // A drag across the Shoja card should not open the trip page
+    dscroll.addEventListener('click', e => { if (dragged) { e.preventDefault(); dragged = false; } }, true);
     dscroll.addEventListener('touchstart', e => { sx = e.touches[0].pageX; sl = dscroll.scrollLeft }, { passive: true });
     dscroll.addEventListener('touchmove', e => { dscroll.scrollLeft = sl - (e.touches[0].pageX - sx) }, { passive: true });
 
